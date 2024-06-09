@@ -1,0 +1,121 @@
+%global_hover {
+    &:hover {
+        background: none;
+        color: #A259FF;
+        border: 1px solid #A259FF;
+    }
+}
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0px;
+    z-index: 999;
+    background: #2B2B2B;
+    &__shrink{
+        background: #2B2B2B;
+        box-shadow: 0px 0px 10px skyblue;
+    }
+    &__btn-hamburger{
+        width: 20px;
+        background: transparent;
+        border: none;
+    }
+    &__logo{
+        font-size: 34px;
+        font-weight: 600;
+    }
+    &__list{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0px 0px 10px skyblue;
+        transition: 0.4s;
+        background: #2B2B2B;
+    }
+    &__btn-hamburger{
+        color: white;
+        font-size: 25px;
+    }
+    &__list-show{
+        left: 0;
+    }
+    
+    .header_link {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        font-family: Poppins;
+        background: transparent;
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: #A259FF;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: -10px;
+            transition: all 0.3s linear;
+            position: relative;
+        }
+
+        &:hover {
+            color: #A259FF;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+    .header-button{
+        width: 120px;
+            height: 45px;
+            border-radius: 15px;
+            background: #A259FF;
+            @extend %global_hover;
+            border: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            gap: 10px;
+            font-family: Work Sans;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 22.4px;
+            text-align: center;
+            color: #fff;
+    }
+}
+@media (min-width:900px) {
+    .header{
+        &__list{
+            position: static;
+            flex-direction: row;
+            box-shadow: none;
+            height: auto;
+            width: auto;
+        }
+        &__btn-hamburger{
+            display: none;
+           
+        }
+        .header_link{
+            font-size: 26px;
+        }
+        
+    }
+}
+@media (max-width:700px) {
+    .header{
+       .header-button{
+        display: none;
+       }
+    }
+}
